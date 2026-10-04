@@ -120,8 +120,8 @@ const [players, setPlayers] = useState([
           <div className='grid md:grid-cols-4 gap-4'>
             <div className='bg-zinc-800 p-4 rounded-2xl'><div>Win Rate</div><div className='text-3xl font-bold'>67%</div></div>
             <div className='bg-zinc-800 p-4 rounded-2xl'><div>Best Map</div><div className='text-3xl font-bold'>Club House</div></div>
-            <div className='bg-zinc-800 p-4 rounded-2xl'><div>Best Stack</div><div className='text-3xl font-bold'>4‑Stack</div></div>
-            <div className='bg-zinc-800 p-4 rounded-2xl'><div>Current Streak</div><div className='text-3xl font-bold'>W4</div></div>
+            <div className='bg-zinc-800 p-4 rounded-2xl'><div>Best Stack</div><div className='text-3xl font-bold'>5‑Stack</div></div>
+            <div className='bg-zinc-800 p-4 rounded-2xl'><div>Current Streak</div><div className='text-3xl font-bold'>W2</div></div>
           </div>
         </div>
         <div className='bg-zinc-900 p-6 rounded-3xl'>
@@ -132,9 +132,9 @@ const [players, setPlayers] = useState([
 
 
           <div className='grid md:grid-cols-3 gap-4 mb-6'>
-            <div className='bg-zinc-800 p-4 rounded-2xl'>Most Played Operator: Buck</div>
+            <div className='bg-zinc-800 p-4 rounded-2xl'>Most Played Operator: TEST</div>
             <div className='bg-zinc-800 p-4 rounded-2xl'>Favorite Map: Club House</div>
-            <div className='bg-zinc-800 p-4 rounded-2xl'>Most Played Teammate: Josh</div>
+            <div className='bg-zinc-800 p-4 rounded-2xl'>STAT: TEST</div>
           </div>
 
 
@@ -148,7 +148,7 @@ const [players, setPlayers] = useState([
 
           <div className='mt-4 bg-orange-500 text-black rounded-2xl p-5'>
             <h3 className='text-xl font-bold'>AI Season Summary</h3>
-            <p>Your squad performed best on Club House, maintained a 67% win rate, and had the highest success rate when running Thermite, Buck, Nomad, Iana, and Thatcher.</p>
+            <p>Your squad performed best on Club House, maintained a 67% win rate, and had the highest success rate when running Fuze, Osa, Brava, Ying, and Lion.</p>
           </div>
         </div>
 
