@@ -20,7 +20,23 @@ const [players, setPlayers] = useState([
     { name: 'Caleb', rank: 'Gold V', kd: 0.76, attack: 'Fuze', defense: 'Frost' },
     { name: 'Chris', rank: 'Bronze V', kd: 0.99, attack: 'Brava', defense: 'Smoke' }, 
 ];
+const attackOps = squad.map((player) => player.attack);
 
+let recommendation = "Nomad";
+
+if (!attackOps.includes("Thermite") && !attackOps.includes("Ace")) {
+  recommendation = "Thermite";
+}
+else if (!attackOps.includes("Nomad")) {
+  recommendation = "Nomad";
+}
+else if (!attackOps.includes("Buck") && !attackOps.includes("Sledge")) {
+  recommendation = "Buck";
+}
+else if (!attackOps.includes("Lion")) {
+  recommendation = "Lion";
+}
+  
   const wrappedAwards = [
     '🏆 MVP: Taliban',
     '🎯 Clutch King: Taliban',
@@ -44,7 +60,9 @@ const [players, setPlayers] = useState([
           <div className='bg-zinc-900 p-5 rounded-3xl'>
             <Bot className='text-orange-500 mb-2' />
             <h2 className='font-bold text-xl'>Who Should I Play?</h2>
-            <div className='mt-3 bg-orange-500 text-black p-3 rounded-2xl font-bold text-xl'>Nomad</div>
+            <div className='mt-3 bg-orange-500 text-black p-3 rounded-2xl font-bold text-xl'>
+  {recommendation}
+</div>
             <p className='text-zinc-400 mt-2'>Best pick based on your team's current lineup.</p>
           </div>
 
