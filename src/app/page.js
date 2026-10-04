@@ -1,0 +1,150 @@
+import { useState } from 'react';
+import { Trophy, Users, BarChart3, Shield, Swords, TrendingUp, Bot } from 'lucide-react';
+export default function SiegeSquad() {
+  const [selectedMap, setSelectedMap] = useState('Club House');
+  const [bannedAttackers] = useState(['Jackal', 'Dokkaebi']);
+  const [bannedDefenders] = useState(['Mira', 'Fenrir']);
+  const squad = [
+    { name: 'You', rank: 'Gold I', kd: 1.21, role: 'Flex', attack: 'Buck', defense: 'Jager' },
+    { name: 'Josh', rank: 'Platinum V', kd: 1.35, role: 'Support', attack: 'Thermite', defense: 'Mute' },
+    { name: 'Mike', rank: 'Gold III', kd: 1.08, role: 'Entry', attack: 'Iana', defense: 'Vigil' },
+    { name: 'Alex', rank: 'Silver I', kd: 0.97, role: 'Roamer', attack: 'Nomad', defense: 'Bandit' },
+  ];
+
+  const wrappedAwards = [
+    '🏆 MVP: Josh',
+    '🎯 Clutch King: You',
+    '🤖 Drone Addict: Mike',
+    '💥 Human Flashbang: Alex',
+    '🪤 Kapkan Victim: Mike',
+    '🧱 Reinforcement Artist: Alex'
+  ];
+
+  return (
+    <div className='min-h-screen bg-gradient-to-b from-black to-zinc-950 text-white p-6'>
+      <div className='max-w-7xl mx-auto space-y-6'>
+
+
+        <div className='text-center py-6'>
+          <h1 className='text-6xl font-bold text-orange-500'>SiegeSquad</h1>
+          <p className='text-zinc-400 text-lg'>AI Squad Builder • Siege Wrapped • Team Analytics</p>
+        </div>
+
+        <div className='grid lg:grid-cols-4 gap-4'>
+          <div className='bg-zinc-900 p-5 rounded-3xl'>
+            <Bot className='text-orange-500 mb-2' />
+            <h2 className='font-bold text-xl'>Who Should I Play?</h2>
+            <div className='mt-3 bg-orange-500 text-black p-3 rounded-2xl font-bold text-xl'>Nomad</div>
+            <p className='text-zinc-400 mt-2'>Best pick based on your team's current lineup.</p>
+          </div>
+
+          <div className='bg-zinc-900 p-5 rounded-3xl'>
+            <Swords className='text-orange-500 mb-2'/>
+            <h2 className='font-bold'>Attack Recommendation</h2>
+            <p className='mt-2 text-zinc-300'>Thermite • Buck • Nomad • Iana • Thatcher</p>
+          </div>
+
+          <div className='bg-zinc-900 p-5 rounded-3xl'>
+            <Shield className='text-orange-500 mb-2'/>
+            <h2 className='font-bold'>Defense Recommendation</h2>
+            <p className='mt-2 text-zinc-300'>Mute • Smoke • Bandit • Jager • Valkyrie</p>
+          </div>
+
+          <div className='bg-zinc-900 p-5 rounded-3xl'>
+            <TrendingUp className='text-orange-500 mb-2'/>
+            <h2 className='font-bold'>Squad ELO</h2>
+            <div className='text-3xl font-bold mt-2'>1587</div>
+            <div className='text-green-400'>+43 This Week</div>
+          </div>
+        </div>
+        <div className='grid lg:grid-cols-2 gap-6'>
+          <div className='bg-zinc-900 p-6 rounded-3xl'>
+            <h2 className='text-2xl font-bold mb-4'>Operator Ban Simulator</h2>
+            <div className='space-y-2'>
+              <p>🚫 Attack Bans: {bannedAttackers.join(', ')}</p>
+              <p>🚫 Defense Bans: {bannedDefenders.join(', ')}</p>
+              <p className='text-orange-400'>Suggested Replacement: Ace instead of Thermite backup.</p>
+            </div>
+          </div>
+
+
+          <div className='bg-zinc-900 p-6 rounded-3xl'>
+            <h2 className='text-2xl font-bold mb-4'>Map Strategy Center</h2>
+            <select value={selectedMap} onChange={(e)=>setSelectedMap(e.target.value)} className='bg-zinc-800 p-2 rounded-xl'>
+              <option>Club House</option>
+              <option>Bank</option>
+              <option>Chalet</option>
+              <option>Lair</option>
+            </select>
+            <p className='mt-3 text-zinc-400'>Recommended bans, site setups, and picks for {selectedMap}.</p>
+          </div>
+        </div>
+
+        <div className='bg-zinc-900 p-6 rounded-3xl'>
+          <div className='flex items-center gap-2 mb-4'>
+            <Users />
+            <h2 className='text-3xl font-bold'>Squad Profiles</h2>
+          </div>
+
+
+          <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-4'>
+            {squad.map(player => (
+              <div key={player.name} className='bg-zinc-800 p-4 rounded-2xl'>
+                <h3 className='font-bold text-lg'>{player.name}</h3>
+                <p>{player.rank}</p>
+                <p>K/D: {player.kd}</p>
+                <p className='text-zinc-400'>{player.role}</p>
+                <p className='text-orange-400'>{player.attack}</p>
+                <p className='text-blue-400'>{player.defense}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className='bg-zinc-900 p-6 rounded-3xl'>
+          <div className='flex items-center gap-2 mb-4'>
+            <BarChart3 />
+            <h2 className='text-3xl font-bold'>Team Analytics</h2>
+          </div>
+
+
+          <div className='grid md:grid-cols-4 gap-4'>
+            <div className='bg-zinc-800 p-4 rounded-2xl'><div>Win Rate</div><div className='text-3xl font-bold'>67%</div></div>
+            <div className='bg-zinc-800 p-4 rounded-2xl'><div>Best Map</div><div className='text-3xl font-bold'>Club House</div></div>
+            <div className='bg-zinc-800 p-4 rounded-2xl'><div>Best Stack</div><div className='text-3xl font-bold'>4‑Stack</div></div>
+            <div className='bg-zinc-800 p-4 rounded-2xl'><div>Current Streak</div><div className='text-3xl font-bold'>W4</div></div>
+          </div>
+        </div>
+        <div className='bg-zinc-900 p-6 rounded-3xl'>
+          <div className='flex items-center gap-2 mb-4'>
+            <Trophy className='text-yellow-400'/>
+            <h2 className='text-3xl font-bold'>Siege Wrapped</h2>
+          </div>
+
+
+          <div className='grid md:grid-cols-3 gap-4 mb-6'>
+            <div className='bg-zinc-800 p-4 rounded-2xl'>Most Played Operator: Buck</div>
+            <div className='bg-zinc-800 p-4 rounded-2xl'>Favorite Map: Club House</div>
+            <div className='bg-zinc-800 p-4 rounded-2xl'>Most Played Teammate: Josh</div>
+          </div>
+
+
+          <div className='bg-zinc-800 rounded-2xl p-5'>
+            <h3 className='font-bold text-xl mb-3'>Season Awards</h3>
+            {wrappedAwards.map((award) => (
+              <div key={award} className='py-1'>{award}</div>
+            ))}
+          </div>
+
+
+          <div className='mt-4 bg-orange-500 text-black rounded-2xl p-5'>
+            <h3 className='text-xl font-bold'>AI Season Summary</h3>
+            <p>Your squad performed best on Club House, maintained a 67% win rate, and had the highest success rate when running Thermite, Buck, Nomad, Iana, and Thatcher.</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  );
+}
