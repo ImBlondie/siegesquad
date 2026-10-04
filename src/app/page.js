@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { Trophy, Users, BarChart3, Shield, Swords, TrendingUp, Bot } from 'lucide-react';
 export default function SiegeSquad() {
   const [selectedMap, setSelectedMap] = useState('Club House');
-const [players, setPlayers] = useState([
+const [analysis, setAnalysis] = useState("");
+
+  const [players, setPlayers] = useState([
   {
     name: "Taliban",
     rank: "Gold IV",
@@ -36,8 +38,32 @@ else if (!attackOps.includes("Buck") && !attackOps.includes("Sledge")) {
 else if (!attackOps.includes("Lion")) {
   recommendation = "Lion";
 }
-  
-  const wrappedAwards = [
+
+function analyzeSquad() {
+  const attackOps = squad.map((p) => p.attack);
+
+  let weaknesses = [];
+
+  if (!attackOps.includes("Thermite") && !attackOps.includes("Ace")) {
+    weaknesses.push("No Hard Breacher");
+  }
+
+  if (!attackOps.includes("Nomad")) {
+    weaknesses.push("No Flank Watch");
+  }
+
+  if (!attackOps.includes("Buck") && !attackOps.includes("Sledge")) {
+    weaknesses.push("No Vertical Play");
+  }
+
+  if (weaknesses.length === 0) {
+    alert("✅ Balanced lineup. No major weaknesses detected.");
+  } else {
+    alert("⚠️ " + weaknesses.join(" | "));
+  }
+}
+
+const wrappedAwards = [
     '🏆 MVP: Taliban',
     '🎯 Clutch King: Taliban',
     '🤖 Drone Addict: Brad',
@@ -57,14 +83,25 @@ else if (!attackOps.includes("Lion")) {
         </div>
 
         <div className='grid lg:grid-cols-4 gap-4'>
-          <div className='bg-zinc-900 p-5 rounded-3xl'>
-            <Bot className='text-orange-500 mb-2' />
-            <h2 className='font-bold text-xl'>Who Should I Play?</h2>
-            <div className='mt-3 bg-orange-500 text-black p-3 rounded-2xl font-bold text-xl'>
-  {recommendation}
+<div className='bg-zinc-900 p-5 rounded-3xl'>
+  <Bot className='text-orange-500 mb-2'/>
+  <h2 className='font-bold text-xl'>Who Should I Play?</h2>
+
+  <div className='mt-3 bg-orange-500 text-black p-3 rounded-2xl font-bold text-xl'>
+    {recommendation}
+  </div>
+
+  <button
+    onClick={analyzeSquad}
+    className='mt-3 bg-zinc-700 hover:bg-zinc-600 px-4 py-2 rounded-xl'
+  >
+    Analyze Squad
+  </button>
+
+  <p className='text-zinc-400 mt-2'>
+    Best pick based on your team's current lineup.
+  </p>
 </div>
-            <p className='text-zinc-400 mt-2'>Best pick based on your team's current lineup.</p>
-          </div>
 
           <div className='bg-zinc-900 p-5 rounded-3xl'>
             <Swords className='text-orange-500 mb-2'/>
