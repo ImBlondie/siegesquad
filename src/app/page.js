@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { Trophy, Users, BarChart3, Shield, Swords, TrendingUp, Bot } from 'lucide-react';
 export default function SiegeSquad() {
