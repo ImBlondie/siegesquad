@@ -1,25 +1,33 @@
 "use client";
-
 import { useState } from 'react';
 import { Trophy, Users, BarChart3, Shield, Swords, TrendingUp, Bot } from 'lucide-react';
 export default function SiegeSquad() {
   const [selectedMap, setSelectedMap] = useState('Club House');
+const [players, setPlayers] = useState([
+  {
+    name: "Taliban",
+    rank: "Gold IV",
+    attack: "Ying",
+    defense: "Thorn"
+  }
+]);
   const [bannedAttackers] = useState(['Jackal', 'Dokkaebi']);
   const [bannedDefenders] = useState(['Mira', 'Fenrir']);
   const squad = [
-    { name: 'You', rank: 'Gold I', kd: 1.21, role: 'Flex', attack: 'Buck', defense: 'Jager' },
-    { name: 'Josh', rank: 'Platinum V', kd: 1.35, role: 'Support', attack: 'Thermite', defense: 'Mute' },
-    { name: 'Mike', rank: 'Gold III', kd: 1.08, role: 'Entry', attack: 'Iana', defense: 'Vigil' },
-    { name: 'Alex', rank: 'Silver I', kd: 0.97, role: 'Roamer', attack: 'Nomad', defense: 'Bandit' },
-  ];
+    { name: 'Taliban', rank: 'Gold IV', kd: 1.55, attack: 'Ying', defense: 'Thorn' },
+    { name: 'Brad', rank: 'Gold I', kd: 0.83, attack: 'Osa', defense: 'Vigil' },
+    { name: 'Wesley', rank: 'Silver I', kd: 1.13, attack: 'Lion', defense: 'Melusi' },
+    { name: 'Caleb', rank: 'Gold V', kd: 0.76, attack: 'Fuze', defense: 'Frost' },
+    { name: 'Chris', rank: 'Bronze V', kd: 0.99, attack: 'Brava', defense: 'Smoke' }, 
+];
 
   const wrappedAwards = [
-    '🏆 MVP: Josh',
-    '🎯 Clutch King: You',
-    '🤖 Drone Addict: Mike',
-    '💥 Human Flashbang: Alex',
-    '🪤 Kapkan Victim: Mike',
-    '🧱 Reinforcement Artist: Alex'
+    '🏆 MVP: Taliban',
+    '🎯 Clutch King: Taliban',
+    '🤖 Drone Addict: Brad',
+    '💥 Human Flashbang: Taliban',
+    '🪤 Kapkan Victim: Chris',
+    '🧱 Reinforcement Artist: Wesley'
   ];
 
   return (
@@ -95,7 +103,6 @@ export default function SiegeSquad() {
                 <h3 className='font-bold text-lg'>{player.name}</h3>
                 <p>{player.rank}</p>
                 <p>K/D: {player.kd}</p>
-                <p className='text-zinc-400'>{player.role}</p>
                 <p className='text-orange-400'>{player.attack}</p>
                 <p className='text-blue-400'>{player.defense}</p>
               </div>
