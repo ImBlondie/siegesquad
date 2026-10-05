@@ -16,11 +16,11 @@ const [analysis, setAnalysis] = useState("");
   const [bannedAttackers] = useState(['Jackal', 'Dokkaebi']);
   const [bannedDefenders] = useState(['Mira', 'Fenrir']);
   const squad = [
-    { name: 'Taliban', rank: 'Gold IV', kd: 1.55, attack: 'Ying', defense: 'Thorn' },
-    { name: 'Brad', rank: 'Gold I', kd: 0.83, attack: 'Osa', defense: 'Vigil' },
-    { name: 'Wesley', rank: 'Silver I', kd: 1.13, attack: 'Lion', defense: 'Melusi' },
-    { name: 'Caleb', rank: 'Gold V', kd: 0.76, attack: 'Fuze', defense: 'Frost' },
-    { name: 'Chris', rank: 'Bronze V', kd: 0.99, attack: 'Brava', defense: 'Smoke' }, 
+    { name: 'Taliban', rank: 'Gold IV', kd: 1.50, attack: 'Ying', defense: 'Thorn' },
+    { name: 'Brad', rank: 'Gold I', kd: 0.91, attack: 'Osa', defense: 'Vigil' },
+    { name: 'Wesley', rank: 'Silver I', kd: 1.15, attack: 'Lion', defense: 'Melusi' },
+    { name: 'Caleb', rank: 'Gold V', kd: 0.80, attack: 'Fuze', defense: 'Frost' },
+    { name: 'Chris', rank: 'Bronze IV', kd: 0.96, attack: 'Brava', defense: 'Smoke' }, 
 ];
 const attackOps = squad.map((player) => player.attack);
 
