@@ -176,7 +176,7 @@ const wrappedAwards = [
             <div className='bg-zinc-800 p-4 rounded-2xl'><div>Win Rate</div><div className='text-3xl font-bold'>67%</div></div>
             <div className='bg-zinc-800 p-4 rounded-2xl'><div>Best Map</div><div className='text-3xl font-bold'>Club House</div></div>
             <div className='bg-zinc-800 p-4 rounded-2xl'><div>Best Stack</div><div className='text-3xl font-bold'>5‑Stack</div></div>
-            <div className='bg-zinc-800 p-4 rounded-2xl'><div>Current Streak</div><div className='text-3xl font-bold'>W2</div></div>
+            <div className='bg-zinc-800 p-4 rounded-2xl'><div>Current Streak</div><div className='text-3xl font-bold'>L1</div></div>
           </div>
         </div>
         <div className='bg-zinc-900 p-6 rounded-3xl'>
